@@ -14,7 +14,7 @@ export default function Header() {
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <Link href={"/"} className="mr-5 hover:text-gray-900">홈</Link>
                 <Link href={"/project"} className="mr-5 hover:text-gray-900">프로젝트</Link>
-                <a href="https://open.kakao.com/o/gpNwYw0e" rel="noopener noreferrer" className="mr-5 hover:text-gray-900">연락하기</a>
+                <a href="https://open.kakao.com/o/gpNwYw0e" rel="noopener noreferrer" target="_blank" className="mr-5 hover:text-gray-900">연락하기</a>
             </nav>
             <ThemeButton />
         </div>
