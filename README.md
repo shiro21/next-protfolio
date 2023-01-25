@@ -24,3 +24,6 @@ postcss.config.js를 생성하고 내용을 추가해줍니다.
 ./styles/globals.css에 base, components, utilities를 추가해줍니다.
 :: https://tailwindcss.com/docs/guides/nextjs
 
+## Notion API
+Notion API 만드는 방법 : https://shiro21.tistory.com/306
+npm install @notionhq/client를 설치하고 
