@@ -1,11 +1,11 @@
 import { NotionProps } from "@/pages/api/interface";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectItem({ data }: { data: NotionProps }) {
-    // console.log(data);
 
     const { external } = data.cover;
-    const { Description, WorkPeriod, Name, Tag } = data.properties;
+    const { Description, WorkPeriod, Name, Tag, GitHubLink } = data.properties;
 
     const startArray = WorkPeriod.date.start.split('-');
     const endArray = WorkPeriod.date.end.split('-');
@@ -13,7 +13,6 @@ export default function ProjectItem({ data }: { data: NotionProps }) {
     let endDate = new Date(Number(endArray[0]), Number(endArray[1]), Number(endArray[2]));
     const diff = Math.abs(Number(endDate) - Number(startDate));
     const result = diff / (1000 * 60 * 60 * 24);
-    console.log(result)
 
     return (
         <div className="flex flex-col p-6 bg-card-primary rounded-md m-3">
@@ -29,6 +28,12 @@ export default function ProjectItem({ data }: { data: NotionProps }) {
                     ))
                 }
             </ul>
+            <span>
+                Git Link: 
+                {
+                    GitHubLink.url ? <Link href={GitHubLink.url} target="_blank"> {GitHubLink.url}</Link> : <span> 등록된 주소가 없습니다.</span>
+                } 
+            </span>
         </div>
     );
 }

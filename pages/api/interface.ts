@@ -36,6 +36,8 @@ export interface NotionProps {
             ],
             type: string
         },
-        url: string
+        GitHubLink: {
+            url: string | null
+        }
     }
 }
